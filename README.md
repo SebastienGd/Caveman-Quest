@@ -2,15 +2,11 @@
 
 Caveman Quest is a digital adaptation (full-stack web application) of the RPG board game developed as part of the LOG2990 course. Collaborators: Simon Asmar, Sarah Ait-Ali-Yahia, Jordan Filion, Cerine Ouchene, Rami Medjdoubi.
 
----
-
 ## Prerequisites
 
 * **Node.js** v16 or higher
 * **npm** (or **Yarn**)
 * (Optional) **Git** for cloning
-
----
 
 ## Setup
 
@@ -37,8 +33,6 @@ Caveman Quest is a digital adaptation (full-stack web application) of the RPG bo
    cd ..
    ```
 
----
-
 ## Development
 
 ### Start Both Client & Server
@@ -55,8 +49,6 @@ npm start
 
 Then visit the client URL to play.
 
----
-
 ## Build for Production
 
 ```bash
@@ -64,8 +56,6 @@ npm run build
 ```
 
 Outputs optimized bundles in each package’s `dist/` directory.
-
----
 
 ## Clean
 
@@ -75,12 +65,8 @@ Remove build artifacts from all packages:
 npm run clean
 ```
 
----
-
 ## Project Structure
 
 * **client/** – Front-end app (TypeScript, SCSS, HTML)
 * **common/** – Shared models & utilities
 * **server/** – Back-end app (TypeScript, Node.js)
-
----
