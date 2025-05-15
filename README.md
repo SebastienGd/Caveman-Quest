@@ -16,14 +16,7 @@ Caveman Quest is a digital adaptation (full-stack web application) of the RPG bo
    cd Caveman-Quest
    ```
 
-2. **Install dependencies** You can install all packages at once if this is a workspace, or individually:
-
-   ```bash
-   # From the project root (workspaces)
-   npm install
-   ```
-
-   Or per package:
+2. **Install dependencies** 
 
    ```bash
    cd client   && npm install
