@@ -6,7 +6,6 @@ Caveman Quest is a digital adaptation (full-stack web application) of the RPG bo
 
 * **Node.js** v16 or higher
 * **npm** (or **Yarn**)
-* (Optional) **Git** for cloning
 
 ## Setup
 
