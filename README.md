@@ -20,7 +20,6 @@ Caveman Quest is a digital adaptation (full-stack web application) of the RPG bo
 
    ```bash
    cd client   && npm install
-   cd ../common && npm install
    cd ../server && npm install
    cd ..
    ```
