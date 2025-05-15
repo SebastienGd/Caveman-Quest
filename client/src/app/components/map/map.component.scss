@@ -1,0 +1,107 @@
+.map-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.grid.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.map-image.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.player-image {
+    position: absolute;
+    max-width: 90%;
+    max-height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.map-description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    color: white;
+    font-size: 1.3rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    overflow-wrap: break-word;
+}
+
+.map-description.show {
+    opacity: 1;
+}
+
+.grid-tile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--highlight-color, currentColor);
+    opacity: 0.5;
+    pointer-events: none;
+    filter: saturate(100%) brightness(75%);
+}
+.grid-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.object-image {
+    position: absolute;
+    max-width: 90%;
+    max-height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 1;
+}

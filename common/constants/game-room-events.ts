@@ -1,0 +1,15 @@
+export enum GameRoomEvent {
+    UpdateGame = 'updateGame',
+    TransitionMessage = 'transitionMessage',
+    MovePlayer = 'movePlayer',
+    TimerValue = 'timerValue',
+    EndTurn = 'endTurn',
+    InitiateCombat = 'initiateCombat',
+    FindEntitiesAtProximity = 'findEntitiesAtProximity',
+    EvadeAction = 'evadeAction',
+    AttackAction = 'attackAction',
+    InteractWithDoor = 'interactWithDoor',
+    ToggleDebugMode = 'toggleDebugMode',
+    ManagePlayerInventory = 'managePlayerInventory',
+    SelectObject = 'selectObject',
+}

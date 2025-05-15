@@ -1,0 +1,21 @@
+<div class="container justified">
+    <header class="header-item">
+        <h1 class="game-title">{{ title }}</h1>
+        <div class="team-items">
+            <h4 class="team-number">{{ teamNumber }}</h4>
+            <p class="team-members">
+                @for (member of teamMembers; track member){
+                    <span>{{member}}</span>@if (member !== teamMembers[teamMembers.length -1]){, }
+                }
+            </p>
+        </div>
+    </header>
+    <div class="main-options">
+        <div class="button-row">
+            <app-button  size='large' routerLink="/create-game">Créer une partie</app-button>
+            <img src='./assets/images/logo.png' alt="Logo du jeu">
+            <app-button size='large' routerLink="/join">Joindre une partie</app-button>
+        </div>
+            <app-button class="button-admin"  color="#a48f6f" size='large' routerLink="/admin">Administrer les jeux</app-button>
+    </div>
+</div>

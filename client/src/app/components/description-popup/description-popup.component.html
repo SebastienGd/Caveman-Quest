@@ -1,0 +1,12 @@
+<div (dragover)="isVisible = false">
+    @if (isVisible) {
+        <div class="popup" [ngClass]="{'show': isVisible, 'north': direction === 'north', 'south': direction === 'south', 'east': direction === 'east', 'west': direction === 'west'}">
+            <div class="popup-arrow"></div>
+            <span>{{ content }}</span>
+        </div>
+    }
+    <div (mouseover)="isVisible = true;" (mouseleave)="isVisible = false">
+        <ng-content></ng-content>
+    </div>
+</div>
+

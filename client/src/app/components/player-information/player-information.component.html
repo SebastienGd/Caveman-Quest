@@ -1,0 +1,53 @@
+<div class="player-info-card">
+    <div class="header">
+        <img [src]="player.avatar" alt="Avatar" class="avatar" />
+        <span class="player-name">{{ player.name }}</span>
+    </div>
+
+    <div class="attributes-and-inventory">
+        <div class="attributes">
+            <div class="attribute">
+                <img src="assets/images/health.png" alt="Health" />
+                <span>: {{ player.attributes.currentHealth }} / {{ player.attributes.health }}</span>
+            </div>
+
+            <div class="attribute">
+                <img src="assets/images/speed.png" alt="Speed" />
+                <span>: {{ player.attributes.speed }}</span>
+            </div>
+
+            <div class="attribute">
+                <img src="assets/images/attack.png" alt="Attack" />
+                <span>: {{ player.attributes.attack.value }}</span>
+
+                <img class="dice" [src]="'assets/images/' + player.attributes.attack.dice + '.png'" alt="Dice" />
+            </div>
+
+            <div class="attribute">
+                <img src="assets/images/defense.png" alt="Defense" />
+                <span>: {{ player.attributes.defense.value }}</span>
+
+                <img class="dice" [src]="'assets/images/' + player.attributes.defense.dice + '.png'" alt="Dice" />
+            </div>
+        </div>
+
+        <div class="inventory">
+            <div class="slots">
+                <div class="slot">
+                    @if (player.inventory[0]) {
+                    <app-description-popup [direction]="'north'" [content]="typeToDescription[player.inventory[0].name]" class="object-popup">
+                        <img [src]="'assets/images/' + player.inventory[0].name + '.png'" alt="{{ player.inventory[0].name }}" />
+                    </app-description-popup>
+                    }
+                </div>
+                <div class="slot">
+                    @if (player.inventory[1]) {
+                    <app-description-popup [direction]="'north'" [content]="typeToDescription[player.inventory[1].name]" class="object-popup">
+                        <img [src]="'assets/images/' + player.inventory[1].name + '.png'" alt="{{ player.inventory[1].name }}" />
+                    </app-description-popup>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

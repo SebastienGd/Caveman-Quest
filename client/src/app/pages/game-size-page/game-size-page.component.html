@@ -1,0 +1,25 @@
+<main class="main-page-container">
+    <div class="header-container">
+        <app-button class="back-button" [size]="'medium'" (click)="handleBackClick()">Retour</app-button>
+        <h1>Création d’un nouveau jeu</h1>
+    </div>
+    <div class="grill-options" (click)="handleMapSizeClick(10)">
+        <div class="grill-card">
+            <img src="assets/images/map10x10.png" alt="Classic" />
+            <div class="grill-title">Petite</div>
+            <p class="grill-description">10 x 10</p>
+        </div>
+
+        <div class="grill-card" (click)="handleMapSizeClick(15)">
+            <img src="assets/images/map15x15.png" alt="Capture The Flag" />
+            <div class="grill-title">Régulière</div>
+            <p class="grill-description">15 x 15</p>
+        </div>
+
+        <div class="grill-card" (click)="handleMapSizeClick(20)">
+            <img src="assets/images/map20x20.png" alt="Capture The Flag" />
+            <div class="grill-title">Grande</div>
+            <p class="grill-description">20 x 20</p>
+        </div>
+    </div>
+</main>

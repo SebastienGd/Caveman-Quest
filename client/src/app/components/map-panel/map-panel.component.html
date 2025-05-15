@@ -1,0 +1,24 @@
+<div class="maps-container">
+    <button
+        class="arrow left" 
+        (click)="prevPage()" 
+        [disabled]="currentIndex === 0">&lt;
+    </button>
+    <div class="map-container">
+        @if(cardType === "admin"){
+            @for(map of displayedMaps; track map){
+                <app-map-card [map]="map" (mapDeleted)="handleMapDeleted()"></app-map-card>
+            }
+        }
+        @else(){
+            @for(map of displayedMaps; track map){
+                <app-map-card-select [map]="map"></app-map-card-select>
+            }
+        }
+    </div>
+    <button
+        class="arrow right" 
+        (click)="nextPage()" 
+        [disabled]="currentIndex + 3 >= maps.length">&gt;
+    </button>
+</div>

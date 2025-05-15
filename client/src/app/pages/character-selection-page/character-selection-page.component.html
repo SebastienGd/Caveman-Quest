@@ -1,0 +1,138 @@
+<main class="main-page-container">
+    @if(this.waitingRoomService.roomStatus().isLocked) {
+        <app-choice-modal 
+            [message]=this.waitingRoomService.roomStatus().message 
+            firstOption="Page d'accueil"
+            secondOption="Réessayer"
+            (firstAction)="handleHomeButton()"
+            (secondAction)="handleRetry()"
+        ></app-choice-modal>
+        }
+        
+    <div class="header-container">
+        <app-button class="back-button" [size]="'medium'" (click)="handleBackClick()">Retour</app-button>
+        <h1>Création de votre personnage</h1>
+        <app-button (click)="handleContinueClick()" [disableElevation]="true">Continuer</app-button>
+    </div>
+    <div id="nav-bar-container">
+        <button id="profile" class="tab flex-center" (click)="selectTab('profile')" [class.active]="selectedTab === 'profile'">Profil</button>
+        <button id="bonus" class="tab flex-center" (click)="selectTab('bonus')" [class.active]="selectedTab === 'bonus'">Attributs</button>
+    </div>
+    <div class="folder">
+        <div class="flex-space-between full-width">
+            @if(selectedTab === 'profile'){
+            <div>
+                <div class="flex-start-horizontal">
+                    <label for="characterService.name">Nom du Guerrier :</label>
+                    <input
+                        id="characterService.name"
+                        class="text-input"
+                        [(ngModel)]="characterService.name"
+                        [ngClass]="{ 'input-error': !characterService.name.trim() && showNameError }"
+                        maxlength="15"
+                    />
+                </div>
+                <div class="character-container" [ngClass]="{ 'div-error': showAvatarError && characterService.selectedAvatar === '' }">
+                    @for (avatar of avatars; track avatar) {
+                    <img
+                        class="character"
+                        [src]="avatar"
+                        [class.unavailable]= "isAvatarChosen(avatar) || avatar === characterService.selectedAvatar"
+                        (click)="characterService.selectAvatar(avatar)"
+                        [class.selected]="avatar === characterService.selectedAvatar"
+                        (dragstart)="$event.preventDefault()"
+                    />
+                    }
+                </div>
+            </div>
+            <div id="selected-character-container" class="flex-center">
+                <img id="selected-character" [src]="characterService.selectedAvatar" (dragstart)="$event.preventDefault()" />
+            </div>
+            } @if (selectedTab === 'bonus'){
+            <div class="categories-container">
+                <h2>Statistiques du Guerrier</h2>
+                <div>
+                    @for (attribute of attributeNames; track attribute) {
+                    <div class="category-container">
+                        <div class="popup-container">
+                            <app-description-popup [direction]="'east'" [content]="typeToDescription[attribute]">
+                                @if(attribute === 'health' || attribute === 'speed'){
+                                    @for(stat of [].constructor(characterService.attributes[attribute]); let i = $index; track i){
+                                        <img [src]="'assets/images/' + attribute + '.png'" class="stat-icon" (dragstart)="$event.preventDefault()" />
+                                    }
+                                }@else  if (attribute === 'defense' || attribute === 'attack'){
+                                    @for(stat of [].constructor(characterService.attributes[attribute].value); let i = $index; track i){
+                                        <img [src]="'assets/images/' + attribute + '.png'" class="stat-icon" (dragstart)="$event.preventDefault()" />
+                                    }
+                                }
+   
+                            </app-description-popup>
+                        </div>
+                        @if((attribute === 'health' || attribute === 'speed') && isPlusVisible && characterService.attributes[attribute] === 4){
+                        <div class="tooltip-container">
+                            <img
+                                src="assets/images/plus.png"
+                                class="stat-icon symbol"
+                                (click)="updateAttributesUI(attribute, 2)"
+                                (dragstart)="$event.preventDefault()"
+                                [ngClass]="{ 'div-error': characterService.attributes[attribute] === 4 && showAttributeError }"
+                            />
+                        </div>
+                        } @if((attribute === 'health' || attribute === 'speed') && !isPlusVisible && characterService.attributes[attribute] === 6){
+                        <img
+                            src="assets/images/minus.png"
+                            class="stat-icon symbol"
+                            (click)="updateAttributesUI(attribute, -2)"
+                            (dragstart)="$event.preventDefault()"
+                        />
+                        } @if (attribute === 'defense' || attribute === 'attack'){
+                        <div class="tooltip-container">
+                            <div
+                                class="drop-zone flex-center"
+                                (dragover)="characterService.onDragOver($event)"
+                                (drop)="characterService.onDrop(attribute)"
+                                [ngClass]="{ 'div-error': showDiceError && characterService.attributes[attribute].dice === null }"
+                            >
+                                @if (characterService.attributes[attribute].dice !== null){
+                                <img
+                                    [src]="'assets/images/' + characterService.attributes[attribute].dice + '.png'"
+                                    class="stat-icon dice"
+                                    (dragstart)="characterService.onDragStart(characterService.attributes[attribute].dice ? characterService.attributes[attribute].dice : null)"
+                                />
+                                }
+                            </div>
+                        </div>
+                        }
+                    </div>
+                    }
+                </div>
+            </div>
+            <div class="dice-title-container">
+                <h2>Dés</h2>
+
+                <div class="dice-popup">
+                    <app-description-popup [direction]="'south'" [content]="'Faites glisser le dé vers l\'attribut de votre choix'">
+
+                        <img
+                            src="assets/images/dice4.png"
+                            class="stat-icon dice"
+                            draggable="true"
+                            (dragstart)="characterService.onDragStart(dice.Dice4)"
+                        />
+                        <img
+                            src="assets/images/dice6.png"
+                            class="stat-icon dice"
+                            draggable="true"
+                            (dragstart)="characterService.onDragStart(dice.Dice6)"
+                        />
+                    </app-description-popup>
+                </div>
+
+            </div>
+            <div id="selected-character-container" class="flex-center">
+                <img id="selected-character" [src]="characterService.selectedAvatar" (dragstart)="$event.preventDefault()" />
+            </div>
+            }
+        </div>
+    </div>
+</main>

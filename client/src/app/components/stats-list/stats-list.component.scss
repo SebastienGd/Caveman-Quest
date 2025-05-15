@@ -1,0 +1,116 @@
+.stats-list {
+    box-sizing: border-box;
+    font-size: 0.7rem;
+    background-color: #e5d5b2;
+    border: 2px solid #4c3229;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 15px;
+
+    .stats-header {
+        display: grid;
+        grid-template-columns: 110px repeat(8, minmax(70px, 1fr));
+        gap: 8px;
+        padding: 8px 6px;
+        background-color: #d4c0a1;
+        border-bottom: 2px solid #4c3229;
+
+        .name-header {
+            font-weight: 700;
+            color: #4c3229;
+            align-self: center;
+            font-size: 0.75rem;
+        }
+
+        .stat-header {
+            cursor: pointer;
+            text-align: center;
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .header-content {
+                .label {
+                    white-space: normal !important;
+                    line-height: 1.05;
+                    font-weight: 600;
+                    color: #4c3229;
+                    font-size: 0.65rem;
+                    letter-spacing: -0.3px;
+                    padding: 0 1px;
+                }
+
+                .sort-arrow {
+                    color: #6b4f3a;
+                    font-size: 0.55rem;
+                    margin-top: 1px;
+                }
+            }
+
+            &:last-child .label {
+                font-size: 0.6rem;
+                line-height: 1;
+            }
+        }
+    }
+
+    .stats-item {
+        display: grid;
+        grid-template-columns: 110px repeat(8, minmax(70px, 1fr));
+        gap: 8px;
+        padding: 8px 6px;
+        border-bottom: 1px solid #d4c0a1;
+
+        .player-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .avatar {
+                width: 28px;
+                height: 28px;
+                border: 1px solid #4c3229;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .name {
+                font-weight: 600;
+                color: #4c3229;
+                white-space: nowrap;
+                font-size: 0.72rem;
+                letter-spacing: -0.2px;
+            }
+        }
+
+        .stats-values {
+            display: contents;
+
+            .stat-value {
+                text-align: center;
+                color: #6b4f3a;
+                font-weight: 500;
+                padding: 2px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 0.68rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .stats-list {
+        max-width: 100%;
+        margin-right: 0;
+        
+        .stats-header,
+        .stats-item {
+            grid-template-columns: 100px repeat(8, minmax(60px, 1fr)); 
+            gap: 6px;
+        }
+    }
+}

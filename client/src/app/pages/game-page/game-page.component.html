@@ -1,0 +1,109 @@
+@if(game().code){ @if (isQuitPopupVisible) {
+<app-choice-modal
+    [message]="'Êtes-vous certain de vouloir quitter?'"
+    [firstOption]="'Annuler'"
+    [secondOption]="'Confirmer'"
+    (firstAction)="closeQuitPopup(false)"
+    (secondAction)="closeQuitPopup(true)"
+/>
+} @if(this.gameService.isInventoryPopupVisible){
+<app-inventory-choice [tile]="this.gameService.currentTile"></app-inventory-choice>
+}
+<div class="game-container">
+    @if (!gameService.currentPlayer.data.includes(playerData.Combat)) {
+    <div class="left-sidebar">
+        <app-game-information
+            [gameName]="game().map.name"
+            [mapSize]="game().map.size + 'x' + game().map.size"
+            [playerCount]="game().players.length"
+            [debugging]="game().data.debugging"
+        ></app-game-information>
+
+        <app-player-information [player]="gameService.currentPlayer" />
+
+        <app-player-list
+            [players]="game().players"
+            [activePlayerName]="gameService.findPlayer([playerData.Active])?.name || ''"
+            [organizerName]="gameService.findPlayer([playerData.Admin])?.name || ''"
+        ></app-player-list>
+    </div>
+    }
+
+    <div class="map-container">
+        <app-timer [time]="gameService.currentTime" [playerData]="gameService.currentPlayer.data"></app-timer>
+        @if (gameService.currentPlayer.data.includes(playerData.Combat)) {
+        <app-game-battle
+            [ourPlayer]="gameService.currentPlayer"
+            [otherPlayer]="gameService.opponentPlayer"
+            (rollDice)="gameService.attackAction()"
+            (evade)="gameService.evadeAction()"
+        ></app-game-battle>
+        } @else {
+        <div class="map">
+            <app-map
+                [map]="game().map"
+                [interactionMode]="'click'"
+                [shownDetailType]="'object'"
+                (tileRightClick)="handleTileRightClick($event)"
+                (tileLeftClick)="handleTileLeftClick($event)"
+                (tileMove)="tryShowFastestRoute($event)"
+            ></app-map>
+        </div>
+        }
+    </div>
+
+    <div class="right-sidebar">
+        <app-chat-box
+            [currentPlayer]="gameService.currentPlayer"
+            [messages]="chatMessages()"
+            [logs]="journalMessages()"
+            (sendChatMessage)="chatService.sendMessage($event)"
+        >
+        </app-chat-box>
+
+        <div class="bordered-container">
+            <p class="moves-left">Déplacements restants : {{ gameService.currentPlayer.movesLeft }}</p>
+            <p class="actions-left">Actions restantes : {{ gameService.currentPlayer.actionsLeft }}</p>
+        </div>
+
+        <div class="action-buttons">
+            <div class="action-buttons">
+                <app-button
+                    [disableElevation]="true"
+                    [hoverEffect]="'changeColor'"
+                    [fullWidth]="true"
+                    [isDisabled]="!gameService.currentPlayer.data.includes(playerData.Active)"
+                    (click)="gameService.handleTurnEnd()"
+                >
+                    Terminer Le Tour
+                </app-button>
+
+                <app-button
+                    [disableElevation]="true"
+                    [hoverEffect]="'changeColor'"
+                    color="#c2b280"
+                    [fullWidth]="true"
+                    [isDisabled]="!gameService.currentPlayer.data.includes(playerData.Active) || gameService.currentPlayer.actionsLeft === 0"
+                    (click)="gameService.findEntitiesAtProximity()"
+                >
+                    Interagir
+                </app-button>
+                <app-button [disableElevation]="true" [hoverEffect]="'changeColor'" color="#ff3815" [fullWidth]="true" (click)="handleQuitGame()">
+                    Abandonner
+                </app-button>
+            </div>
+        </div>
+    </div>
+
+    @if (selectedTile) {
+    <div class="tile-popup" (contextmenu)="$event.preventDefault()">
+        @if (selectedTile.player) {
+        <img class="player-image" [src]="selectedTile.player.avatar" />
+        <br />
+        }
+        <p [innerHTML]="getTileDescription(selectedTile)"></p>
+        <button (click)="selectedTile = null">Fermer</button>
+    </div>
+    }
+</div>
+}

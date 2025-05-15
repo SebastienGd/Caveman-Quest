@@ -1,0 +1,9 @@
+<div class='popup-overlay'>
+    <div class='choice-modal'>
+        <p> {{message}} </p>
+        <div class="button-container">
+        <app-button color="#a48f6f" (click)="firstAction.emit()"> {{firstOption}} </app-button> 
+        <app-button (click)="secondAction.emit()"> {{secondOption}} </app-button> 
+        </div>
+    </div>
+</div>

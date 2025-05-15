@@ -1,0 +1,18 @@
+export enum NotificationMessage {
+    StartGame = "La partie a été commencée par l'organisateur",
+    OrganizerQuitWaitingRoom = "La partie a été annulée, car l'organisateur a quitté.",
+    KickedFromWaitingRoom = " a été expulsé(e) de la salle d'attente.",
+    QuitWaitingRoom = " a quitté la salle d'attente",
+    UnavailableMap = "Cette carte de jeu n'est plus disponible.",
+    InvalidLockedRoom = 'Cette salle est verrouillée',
+    InvalidCode = 'Le code est invalide',
+    YouWon = 'Vous avez gagné la partie',
+    HasWon = ' a gagné la partie',
+    YourTeamWon = 'Votre équipe a gagné la partie',
+    YourTeamLost = 'Votre équipe a perdu la partie',
+    NoWinner = 'Aucun gagnant',
+    DebugIsOn = 'Le mode déboggage a été activé',
+    DebugIsOff = 'Le mode déboggage a été désactivé',
+    NewTurnIs = "C'est le tour à ",
+    PlayerNumberUneven = "Il faut un nombre de joueur pair pour une partie 'Capturer le drapeau'",
+}

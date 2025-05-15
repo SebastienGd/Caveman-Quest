@@ -1,0 +1,10 @@
+<main class="main-page-container">
+    <header>
+        <app-button size="medium" (click)="goToHome()">Retour</app-button>
+        <h1>Gestion des cartes de jeux</h1>
+        <app-button size="small" (click)="goToCreateGame()">+</app-button>
+    </header>
+    <div class="maps-container" style="width: 100%">
+        <app-map-panel cardType="admin"></app-map-panel>
+    </div>
+</main>

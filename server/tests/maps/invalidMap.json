@@ -1,0 +1,124 @@
+{
+  "name": "TEST",
+  "description": "",
+  "mode": "Capture the Flag",
+  "size": 10,
+  "tiles": [
+    [
+      { "type": "base", "Player": null, "object": null },
+      { "type": "base", "Player": null, "object": null },
+      { "type": "base", "Player": null, "object": null },
+      { "type": "base", "Player": null, "object": null },
+      { "type": "base", "Player": null, "object": null },
+      { "type": "base", "Player": null, "object": null },
+      { "type": "base", "Player": null, "object": null },
+      { "type": "opened_door", "Player": null, "object": {"name": "random"} },
+      { "type": "base", "Player": null, "object": null },
+      { "type": "water", "Player": null, "object": null }
+    ],
+    [
+      { "type": "ice", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "base", "Player": null, "object": null },
+      { "type": "water", "Player": null, "object": null },
+      { "type": "ice", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "base", "Player": null, "object": null },
+      { "type": "water", "Player": null, "object": null },
+      { "type": "ice", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null }
+    ],
+    [
+      { "type": "ice", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "base", "Player": null, "object": null },
+      { "type": "water", "Player": null, "object": null },
+      { "type": "ice", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "opened_door", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null }
+    ],    [
+      { "type": "ice", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "base", "Player": null, "object": null },
+      { "type": "water", "Player": null, "object": null },
+      { "type": "ice", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "base", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null }
+    ],    [
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "base", "Player": null, "object": {"type": "spawnpoint"} },
+      { "type": "water", "Player": null, "object": null },
+      { "type": "ice", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null }
+    ],    [
+      { "type": "ice", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "base", "Player": null, "object": null },
+      { "type": "water", "Player": null, "object": null },
+      { "type": "closed_door", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null }
+    ],    [
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null }
+    ],    [
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null }
+    ],    [
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null }
+    ],    [
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null },
+      { "type": "wall", "Player": null, "object": null }
+    ]
+  ],
+  "createdAt": "2025-01-21T00:00:00Z",
+  "updatedAt": "2025-01-21T00:00:00Z",
+  "visibility": true
+}

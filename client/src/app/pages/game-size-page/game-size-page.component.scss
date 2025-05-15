@@ -1,0 +1,74 @@
+.main-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../../../assets/images/admin.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+    max-width: 1300px;
+    padding: 20px;
+    position: relative;
+}
+
+.page-title {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+}
+
+app-button {
+    position: absolute;
+    left: 20px; 
+}
+
+.grill-container {
+    text-align: center;
+}
+
+.grill-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.grill-card {
+    background-color: antiquewhite;
+    border-radius: 8px;
+    width: 300px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.grill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.grill-card img {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+}
+
+.grill-title {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.grill-description {
+    margin-top: 10px;
+}

@@ -1,0 +1,64 @@
+.main-page-container {
+  height: 100vh;
+  width: 100%;
+  background-image: url('/assets/images/admin.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.header-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1300px;
+  padding: 20px;
+  height: 100px;
+}
+
+.header-container h1 {
+  font-size: 2.7rem;
+  color: var(--font-color-dark);
+  margin: 0;
+}
+
+app-button.back-button {
+  position: absolute;
+  left: 20px;
+}
+
+app-button.join-button {
+  position: absolute;
+  right: 20px;
+}
+
+.folder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color-light);
+  padding: 40px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.join-folder {
+  margin-top: 20px;
+}
+
+.join-code-input {
+  width: 400px;
+  height: 50px;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 0;
+  outline: none;
+  padding: 5px 10px;
+  background-color: var(--background-color-light-2);
+  margin: 0 auto;
+}

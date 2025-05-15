@@ -1,0 +1,45 @@
+.main-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../../../assets/images/admin.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.main-page-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(120, 120, 120, 0.9);
+    mix-blend-mode: overlay;
+}
+
+.main-page-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2.7rem;
+    font-family: 'Vimland';
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: -5px;
+}
+
+.maps-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,41 @@
+.btn-action {
+
+    &:disabled {
+        background: #cccccc !important;
+        color: #666666 !important;
+    }
+    
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.25s ease-in-out;
+    color: white;
+    white-space: nowrap;
+
+    &.translate-hover-effect:hover {
+        transform: translateY(5.7px);
+        box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    &.disable-elevation {
+        box-shadow: none;
+    }
+}
+
+.btn-small {
+    padding: 7px 10px 5px 10px;
+    font-size: 0.8em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.btn-medium {
+    padding: 15px 20px 10px 20px;
+}
+
+.btn-large {
+    padding: 20px 40px 15px 40px;
+    font-size: 1.2em;
+}

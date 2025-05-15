@@ -1,0 +1,26 @@
+{
+    "id": "player_4",
+    "name": "sarah",
+    "avatar": "avatar_url_here",
+    "data": [],
+    "movesLeft": 4,
+    "actionsLeft": 1,
+    "attributes": {
+        "currentHealth": 6,
+        "health": 6,
+        "attack": { "value": 4, "dice": "dice4" },
+        "defense": { "value": 4, "dice": "dice6" },
+        "speed": 6
+    },
+    "inventory": [],
+    "stats": {
+        "victories": 0,
+        "defeats": 0,
+        "evasions": 0,
+        "combat": 0,
+        "lostHP": 0,
+        "damageDone": 0,
+        "nbrOfPickedUpObjects": 0,
+        "tilesVisitedPercentage": 0
+    }
+}

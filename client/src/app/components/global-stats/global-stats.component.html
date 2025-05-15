@@ -1,0 +1,30 @@
+<div class="global-stats-container">
+    <h2 class="title">Statistiques de la partie</h2>
+    
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-title">Durée de la partie</div>
+            <div class="stat-value">{{ formattedDuration }}</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-title">Nombre de tours</div>
+            <div class="stat-value">{{ stats.nbTurns }}</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-title">% Tuiles visitées</div>
+            <div class="stat-value">{{ stats.tilesVisitedPercentage }}%</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-title">% Portes utilisées</div>
+            <div class="stat-value">{{ stats.doorInteractedPercentage }}%</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-title">Porteurs de drapeau</div>
+            <div class="stat-value">{{ stats.nbPlayersHeldFlag }}</div>
+        </div>
+    </div>
+</div>

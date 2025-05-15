@@ -1,0 +1,36 @@
+<div class="stats-list">
+    <div class="stats-header">
+        <span class="name-header">Joueur</span>
+        @for (col of columns; track col.key) {
+            <span class="stat-header" 
+                  (click)="onSort(col.key)"
+                  [class.active]="sortColumn === col.key">
+                <div class="header-content">
+                    <span class="label" [innerHTML]="col.label"></span>
+                    @if (sortColumn === col.key) {
+                        <span class="sort-arrow">
+                            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+                        </span>
+                    }
+                </div>
+            </span>
+        }
+    </div>
+
+    @for (player of sortedPlayers; track player.id) {
+        <div class="stats-item">
+            <div class="player-info">
+                <img [src]="player.avatar" [alt]="player.name" class="avatar">
+                <span class="name">{{ player.name }}</span>
+            </div>
+            
+            <div class="stats-values">
+                @for (col of columns; track col.key) {
+                    <span class="stat-value">
+                        {{ player.stats[col.key] }}
+                    </span>
+                }
+            </div>
+        </div>
+    }
+</div>

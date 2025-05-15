@@ -1,0 +1,33 @@
+.popup-overlay {
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    z-index: 1001;
+}
+
+.choice-modal {
+    background-color: var(--background-color-light-2);
+    padding: 45px;
+    border-radius: 12px;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+}
+
+p {
+    text-align: center;
+    max-width: 70%;
+    margin: 0 auto 35px; 
+    line-height: 1.5; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+}

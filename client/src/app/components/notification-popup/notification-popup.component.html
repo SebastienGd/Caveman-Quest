@@ -1,0 +1,10 @@
+<div class="notification-container">
+    @for(notification of notifications(); track notification){
+        <div class="notification">
+            {{ notification.message }}
+            @if(notification.canClose){
+                <button (click)="remove(notification)">X</button>
+            }
+        </div>
+    }   
+</div>

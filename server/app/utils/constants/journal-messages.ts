@@ -1,0 +1,18 @@
+export enum JournalMessages {
+    StartGame = 'La partie commence !',
+    DebugIsOn = 'Le mode déboggage a été activé',
+    DebugIsOff = 'Le mode déboggage a été désactivé',
+    TurnStart = ' commence son tour',
+    CombatStart = ' a initié un combat contre ',
+    PickUpObject = " a pris possession de l'objet: ",
+    PickUpFlag = ' a pris possession du drapeau!',
+    OpenDoor = ' a ouvert la porte aux coordonnées ',
+    CloseDoor = ' a fermé la porte aux coordonnées ',
+    Disconnect = ' a quitté la partie',
+    CombatEnd = 'Le combat est terminé: ',
+    CombatEvade = " s'est enfui de ",
+    CombatWin = ' a gagné le combat contre ',
+    EndGameCTF = 'La partie est terminer, les gagnants sont: ',
+    EndGame = 'La partie est terminée, le gagnant est ',
+    ActivePlayerList = 'Liste de joueurs actifs: ',
+}

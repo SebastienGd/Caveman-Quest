@@ -1,0 +1,56 @@
+@if(currentPlayer){
+<div class="chat-box">
+    <div class="header">
+        <small class="player-name">{{ currentPlayer.name }}</small>
+        <div class="button-container">
+            <button class="message-button" [class.active]="showMessages" (click)="toggleView(true)">Messagerie</button>
+            <button class="journal-button" [class.active]="!showMessages" (click)="toggleView(false)">Journal de jeu</button>
+        </div>
+    </div>
+
+    @if (showMessages) {
+    <div class="messages-content" #messagesContainer>
+        @for (message of messages; track $index) {
+        <div
+            class="message"
+            [class.message-right]="message.author === currentPlayer.name"
+            [class.message-left]="message.author !== currentPlayer.name"
+        >
+            <div class="message-header">
+                <span class="author">{{ message.author }}</span>
+                <span class="timestamp">{{ message.timestamp }}</span>
+            </div>
+            <div class="content">{{ message.content }}</div>
+        </div>
+        }
+    </div>
+    } @else {
+    <div class="logs-content">
+        @for (log of filteredLogs; track $index) {
+        <div class="log-entry" data-testid="log-entry">
+            {{ log.content }}
+        </div>
+        }
+    </div>
+
+    <div class="filter-footer">
+        <button data-testid="filter-button" class="filter-button" [class.active]="filterLogs" (click)="toggleLogFilter()">
+            {{ filterLogs ? 'Tout voir' : 'Filtrer ' + currentPlayer.name }}
+        </button>
+    </div>
+    } @if (showMessages) {
+    <div class="input-area">
+        <input
+            type="text"
+            [(ngModel)]="messageContent"
+            (keydown)="handleInputKeydown($event)"
+            (keyup.enter)="handleSendMessage()"
+            placeholder="Écrire un message..."
+            class="message-input"
+            maxlength="200"
+        />
+        <span class="send-icon" (click)="handleSendMessage()">➤</span>
+    </div>
+    }
+</div>
+}

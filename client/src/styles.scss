@@ -1,0 +1,139 @@
+:root {
+    --background-color: #ebe5dd;
+    --background-color-light: #fff9f0;
+    --background-color-light-2: #f7ecdd;
+    --background-color-dark: #ae946f;
+    --background-color-dark-2: #b8a582;
+    --font-color-dark: #4c3229;
+    --font-color-light: #8a6e59;
+    --border-color-dark: #7a5f3e;
+}
+
+@font-face {
+    font-family: 'Vimland';
+    src: url('assets/fonts/Vimland-9YmW2.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+button,
+body {
+    font-size: 1.5rem;
+    color: var(--font-color-dark);
+}
+body {
+    margin: 0;
+    font-family: 'Vimland', sans-serif;
+}
+
+input,
+textarea,
+button,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.main-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--background-color);
+    height: 100vh;
+    width: 100vw;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.input-error {
+    border: 2px solid red !important;
+    outline: none !important;
+}
+
+.div-error {
+    border: 2px solid red !important;
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+.flex-center {
+    @include flex(row, center, center);
+}
+
+.flex-start-horizontal {
+    @include flex(row, flex-start, center);
+}
+
+.flex-center-horizontal {
+    @include flex(row, center, center);
+}
+
+.flex-start-vertical {
+    @include flex(column, center, flex-start);
+}
+
+.flex-end-horizontal {
+    @include flex(row, flex-end, center);
+}
+
+.flex-end-vertical {
+    @include flex(column, center, flex-end);
+}
+
+.flex-space-between {
+    @include flex(row, space-between, center);
+}
+
+.flex-space-around-horizontal {
+    @include flex(row, space-around, center);
+}
+
+.flex-space-around-vertical {
+    @include flex(row, center, space-around);
+}
+
+.flex-space-evenly {
+    @include flex(row, space-evenly, center);
+}
+
+.flex-row {
+    @include flex(row);
+}
+
+.flex-row-reverse {
+    @include flex(row-reverse);
+}
+
+.flex-column {
+    @include flex(column);
+}
+
+.flex-column-reverse {
+    @include flex(column-reverse);
+}
+
+.flex-wrap {
+    @include flex(row, flex-start, stretch, wrap);
+}
+
+.flex-nowrap {
+    @include flex(row, flex-start, stretch, nowrap);
+}
+
+.flex-wrap-reverse {
+    @include flex(row, flex-start, stretch, wrap-reverse);
+}

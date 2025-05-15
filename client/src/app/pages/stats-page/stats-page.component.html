@@ -1,0 +1,33 @@
+@if(game().code !== undefined){ @if (isQuitPopupVisible) {
+<app-choice-modal
+    [message]="'Êtes-vous certain de vouloir quitter?'"
+    [firstOption]="'Annuler'"
+    [secondOption]="'Confirmer'"
+    (firstAction)="closeQuitPopup(false)"
+    (secondAction)="closeQuitPopup(true)"
+/>
+}
+<div class="stats-page">
+    <div class="header">
+        <button class="quit-button" (click)="handleQuit()">QUITTER</button>
+        <h1 class="title">FIN DE LA PARTIE!</h1>
+    </div>
+
+    <div class="content">
+        <div class="stats-section">
+            <app-global-stats class="global-stats-container" [game]="game()"> </app-global-stats>
+            <app-stats-list class="stats-list" [players]="game().players"> </app-stats-list>
+        </div>
+
+        <div class="chat-box">
+            <app-chat-box
+                [currentPlayer]="statsService.currentPlayer"
+                [messages]="chatMessages()"
+                [logs]="journalMessages()"
+                (sendChatMessage)="chatService.sendMessage($event)"
+            >
+            </app-chat-box>
+        </div>
+    </div>
+</div>
+}

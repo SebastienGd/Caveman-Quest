@@ -1,0 +1,41 @@
+<div
+    class="map-placeholder flex-center"
+    (mouseup)="stopInteraction.emit()"
+    (mouseleave)="stopInteraction.emit(); isHovered = false"
+    (contextmenu)="$event.preventDefault()"
+    (mouseenter)="isHovered = shownDetailType === 'description'"
+>
+    <div class="map-description" [class.show]="isHovered">{{ map.description }}</div>
+
+    <div class="grid" [class.hidden]="isHovered" [style.gridTemplateColumns]="'repeat(' + map.size + ', 1fr)'">
+        @for(row of map.tiles; track row; let i = $index){ @for(tile of row; track tile; let j = $index){
+        <div
+            class="grid-tile"
+            (mousedown)="tileClick($event, tile)"
+            (mousemove)="tileMove.emit(tile)"
+            (dragover)="$event.preventDefault()"
+            (drop)="tileDrop.emit(tile)"
+        >
+            <img [src]="'assets/images/' + tile.type + '.png'" (dragstart)="$event.preventDefault()" />
+            @if (tile.object) { @if(shownDetailType === 'object'){
+            <app-description-popup [direction]="map.size - 3 > i ? 'south' : 'north'" [content]="typeToDescription[tile.object.name]">
+                <img
+                    class="object-image clickable"
+                    [src]="'assets/images/' + tile.object.name + '.png'"
+                    [class.hover]="objectDragStart"
+                    (dragstart)="objectDragStart.emit(tile)"
+                    (contextmenu)="objectRightClick.emit(tile)"
+                    (mousedown)="interactionMode === 'drag' && $event.stopPropagation()"
+                />
+            </app-description-popup>
+            } @else {
+            <img class="object-image" [src]="'assets/images/' + tile.object.name + '.png'" />
+            } } @if (tile.player) {
+            <img class="player-image" [src]="tile.player.avatar" />
+            } @if(tile.data){ @for(data of tile.data; track data){
+            <img class="overlay-image" [src]="'assets/images/' + data + '.png'" alt="overlay" />
+            } }
+        </div>
+        }}
+    </div>
+</div>

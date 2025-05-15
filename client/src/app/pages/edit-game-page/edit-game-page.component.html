@@ -1,0 +1,100 @@
+@if (errors.length > 0) {
+<app-error-popup [errors]="errors" (popupClose)="errors = []"></app-error-popup>
+}
+<div [hidden]="!showChoicePopup">
+    <app-choice-modal 
+    message="Êtes-vous sûr de vouloir réinitialiser cette carte?" 
+    firstOption="Non"
+    secondOption="Oui"
+    (firstAction)="showChoicePopup = false"
+    (secondAction)="handleResetConfirm()">
+    </app-choice-modal>
+</div>
+
+
+<div class="editor-container" (drop)="editGameService.dropItemOutsideMap()" (dragover)="$event.preventDefault()">
+    <div class="sidebar left flex-center-vertical">
+        @if (editGameService.map.mode === gameMode.Ctf){
+        <p id="title">Mode: Capturer le Drapeau</p>
+        } @else {
+        <p id="title">Mode: Classique</p>
+        }
+        <input
+            placeholder="Nommer la carte"
+            [(ngModel)]="editGameService.map.name"
+            (blur)="editGameService.map.name = editGameService.map.name.trim()"
+            maxlength="40"
+        />
+        <textarea placeholder="Ajouter une description" [(ngModel)]="editGameService.map.description" maxlength="150"></textarea>
+
+        <div class="buttons">
+            <app-button [disableElevation]="true" [hoverEffect]="'changeColor'" [fullWidth]="true" (click)="handleSaveClick()"
+                >Enregistrer</app-button
+            >
+            <app-button [disableElevation]="true" [hoverEffect]="'changeColor'" color="#c2b280" [fullWidth]="true" (click)="showChoicePopup = true"
+                >Réinitialiser</app-button
+            >
+            <app-button [disableElevation]="true" [hoverEffect]="'changeColor'" color="#e3342f" [fullWidth]="true" (click)="handleCancelClick()"
+                >Annuler</app-button
+            >
+        </div>
+    </div>
+    <div class="map-container flex-center">
+        <div class="map">
+            <app-map
+                [map]="editGameService.map"
+                [shownDetailType]="'object'"
+                [interactionMode]="'drag'"
+                (tileDrop)="editGameService.dropItem($event)"
+                (tileRightClick)="editGameService.handleClick($event, 1)"
+                (tileLeftClick)="editGameService.handleClick($event, 0)"
+                (stopInteraction)="editGameService.resetInteraction()"
+                (objectDragStart)="dragTile($event)"
+                (objectRightClick)="deleteObject($event)"
+                (tileMove)="editGameService.modifyTile($event)"
+            ></app-map>
+        </div>
+    </div>
+
+    <div class="sidebar right">
+        <div class="flex-center">
+            <h2>Sélection de tuiles</h2>
+        </div>
+        @for(tileName of tileNames; track tileName){ @if(![ tileType.OpenedDoor, tileType.Base].includes(tileName)){
+        <div class="tile" (click)="changeTool(tileName)">
+            <div class="tile-image-container">
+                <app-description-popup [direction]="'west'" [content]="typeToDescription[tileName]">
+                    <img
+                        [src]="'assets/images/' + tileName + '.png'"
+                        class="tile-image"
+                        alt="tileName"
+                        [class.active]="tileName === editGameService.activeTile"
+                    />
+                </app-description-popup>
+            </div>
+        </div>
+        } }
+    </div>
+
+    <div class="bottom-bar">
+        <h2>Items</h2>
+        <div class="inventory-grid">
+            @for(objectName of objectNames; track objectName){ @if(editGameService.map.mode !== gameMode.Classical || objectName !== 'flag'){
+            <div class="inventory-slot">
+                <p class="object-count">
+                    {{ editGameService.remainingObjectCount(objectName) }}
+                </p>
+                <div class="item">
+                    <app-description-popup [direction]="'north'" [content]="typeToDescription[objectName]">
+                        <img
+                            [src]="'assets/images/' + objectName + '.png'"
+                            [alt]="objectName"
+                            (dragstart)="editGameService.isValidObjectOccurence(objectName) ? dragObject(objectName) : $event.preventDefault()"
+                        />
+                    </app-description-popup>
+                </div>
+            </div>
+            } }
+        </div>
+    </div>
+</div>

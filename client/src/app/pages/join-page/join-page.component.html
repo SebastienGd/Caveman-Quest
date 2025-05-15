@@ -1,0 +1,20 @@
+<main class="main-page-container join-game-container">
+  <div class="header-container">
+    <app-button class="back-button" [size]="'medium'" (click)="handleBackClick()">Retour</app-button>
+    <h1>Rejoindre le jeu</h1>
+    <app-button class="join-button" [disableElevation]="true" (click)="tryJoinGame()">Continuer</app-button>
+  </div>
+  <div class="folder join-folder">
+    <input 
+      type="text" 
+      class="text-input join-code-input" 
+      placeholder="Entrez le code (4 chiffres)" 
+      maxlength="4"
+      pattern="[0-9]{4}"
+      inputmode="numeric"
+      [(ngModel)]="code"
+      (keypress)="($event.charCode >= 48 && $event.charCode <= 57) || $event.preventDefault()"
+      required
+    />
+  </div>
+</main>

@@ -1,0 +1,153 @@
+import { GameBase } from '@common/interfaces/game';
+import { GameMode, MapSize, TileType } from '@common/interfaces/map';
+import { ObjectName } from '@common/interfaces/object';
+import { mockPlayers } from './mock-players';
+
+export const mockGame: GameBase = {
+    code: 'game-12345',
+    map: {
+        _id: '67a7905e4495c6ff326bad3f',
+        name: 'Michel',
+        description: 'michy the hatty',
+        mode: GameMode.Classical,
+        size: MapSize.Small,
+        createdAt: '2025-02-08T17:11:58.199Z',
+        updatedAt: '2025-02-13T17:04:35.721Z',
+        visibility: true,
+        tiles: [
+            // Row 0
+            [
+                { type: TileType.Base, object: { name: ObjectName.Trex } },
+                { type: TileType.Base },
+                { type: TileType.Water },
+                { type: TileType.Base },
+                { type: TileType.Wall },
+                { type: TileType.Base, object: { name: ObjectName.Bone } },
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.Wall },
+                { type: TileType.Wall },
+            ],
+            // Row 1
+            [
+                { type: TileType.Base },
+                { type: TileType.Ice },
+                { type: TileType.Water },
+                { type: TileType.Base, object: { name: ObjectName.Random } },
+                { type: TileType.Wall },
+                { type: TileType.Base },
+                { type: TileType.Ice },
+                { type: TileType.Water },
+                { type: TileType.Base, object: { name: ObjectName.Spawnpoint }, player: mockPlayers[3] },
+                { type: TileType.Wall },
+            ],
+            // Row 2
+            [
+                { type: TileType.Wall },
+                { type: TileType.Ice },
+                { type: TileType.Wall },
+                { type: TileType.Wall },
+                { type: TileType.Wall },
+                { type: TileType.Wall },
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.Wall },
+            ],
+            // Row 3
+            [
+                { type: TileType.Wall },
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.Ice },
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.Water },
+            ],
+            // Row 4
+            [
+                { type: TileType.Wall },
+                { type: TileType.Water },
+                { type: TileType.Base },
+                { type: TileType.Base, object: { name: ObjectName.Torch } },
+                { type: TileType.Base },
+                { type: TileType.Water },
+                { type: TileType.Ice },
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.Base },
+            ],
+            // Row 5
+            [
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.Water },
+                { type: TileType.Wall },
+                { type: TileType.Wall },
+                { type: TileType.Base, object: { name: ObjectName.Random } },
+                { type: TileType.Wall },
+                { type: TileType.Wall },
+                { type: TileType.ClosedDoor },
+                { type: TileType.Wall },
+            ],
+            // Row 6
+            [
+                { type: TileType.Ice },
+                { type: TileType.Base, object: { name: ObjectName.Steak } },
+                { type: TileType.Base },
+                { type: TileType.Ice },
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.Wall },
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.Water },
+            ],
+            // Row 7
+            [
+                { type: TileType.Base },
+                { type: TileType.Water },
+                { type: TileType.Base },
+                { type: TileType.Ice },
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.ClosedDoor },
+                { type: TileType.Base },
+                { type: TileType.Water },
+                { type: TileType.Base, object: { name: ObjectName.Bird } },
+            ],
+            // Row 8
+            [
+                { type: TileType.Wall },
+                { type: TileType.ClosedDoor },
+                { type: TileType.Wall },
+                { type: TileType.Wall },
+                { type: TileType.Base },
+                { type: TileType.Water },
+                { type: TileType.Wall },
+                { type: TileType.Wall },
+                { type: TileType.Wall },
+                { type: TileType.Wall },
+            ],
+            // Row 9
+            [
+                { type: TileType.Base },
+                { type: TileType.Ice },
+                { type: TileType.Base, object: { name: ObjectName.Spawnpoint }, player: mockPlayers[0] },
+                { type: TileType.Base },
+                { type: TileType.Ice },
+                { type: TileType.Base },
+                { type: TileType.Base },
+                { type: TileType.Ice },
+                { type: TileType.Base, object: { name: ObjectName.ClubWeapon } },
+                { type: TileType.Wall },
+            ],
+        ],
+    },
+    players: mockPlayers,
+    data: { debugging: false, transitioning: false, turnIsEnding: false, gameIsOver: false },
+    stats: { duration: 399, nbTurns: 23, doorInteractedPercentage: 40, tilesVisitedPercentage: 20, nbPlayersHeldFlag: 2 },
+};

@@ -1,0 +1,132 @@
+{
+    "_id": "6792679390c2bf4562",
+    "name": "TEMPLATE232",
+    "description": "A frozen battle arena with open spaces and hidden traps.",
+    "mode": "Free-For-All",
+    "size": 10,
+    "tiles": [
+        [
+            { "type": "base", "Player": null, "object": { "name": null, "type": "attributes-changing" } },
+            { "type": "base", "Player": null, "object": { "name": null, "type": "attributes-changing" } },
+            { "type": "base", "Player": null, "object": { "name": null, "type": "game-modifier" } },
+            { "type": "base", "Player": null, "object": { "name": null, "type": "game-modifier" } },
+            { "type": "base", "Player": null, "object": { "name": null, "type": "conditional" } },
+            { "type": "base", "Player": null, "object": { "name": null, "type": "conditional" } },
+            { "type": "base", "Player": null, "object": { "name": null, "type": "random" } },
+            { "type": "base", "Player": null, "object": { "name": null, "type": "random" } },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null }
+        ],
+        [
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": { "name": null, "type": "spawnpoint" } },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null }
+        ],
+        [
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null }
+        ],
+        [
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null }
+        ],
+        [
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null }
+        ],
+        [
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null }
+        ],
+        [
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null }
+        ],
+        [
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null }
+        ],
+        [
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null }
+        ],
+        [
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": null },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null },
+            { "type": "base", "Player": null, "object": { "name": null, "type": "spawnpoint" } },
+            { "type": "water", "Player": null, "object": null },
+            { "type": "ice", "Player": null, "object": null },
+            { "type": "wall", "Player": null, "object": null }
+        ]
+    ],
+    "createdAt": "2025-01-21T00:00:00Z",
+    "updatedAt": "2025-01-21T00:00:00Z",
+    "visibility": true
+}

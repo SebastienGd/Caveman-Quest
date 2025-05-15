@@ -1,0 +1,19 @@
+<main class="main-page-container">
+        <div class="header-container">
+            <app-button class="back-button" [size]="'medium'" (click)="handleBackClick()">Retour</app-button>
+            <h1>Création d’un nouveau jeu</h1>
+        </div>
+        <div class="game-mode-options">
+            <div class="mode-card" (click)="handleGameModeClick('Classical')">
+                <img src="assets/images/classicmode.png" alt="Classic" />
+                <div class="mode-title">Mode Classique</div>
+                <p class="mode-description">Dans ce mode, les joueurs suivent des règles traditionnelles avec un mode de jeu simple.</p>
+            </div>
+
+            <div class="mode-card" (click)="handleGameModeClick('Capture the Flag')">
+                <img src="assets/images/captureflag.png" alt="Capture The Flag" />
+                <div class="mode-title">Mode Capturer le Drapeau</div>
+                <p class="mode-description">Dans ce mode, deux équipes s'affrontent pour capturer le drapeau de l'équipe adverse.</p>
+            </div>
+        </div>
+</main>

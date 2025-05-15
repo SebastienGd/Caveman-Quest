@@ -1,0 +1,78 @@
+<div class="battle-container">
+    <div class="battle-center">
+        <div class="battle-content">
+            <div class="dice-box">
+                <div class="dice-container">
+                    <img src="assets/images/attack.png" alt="Attack" class="dice-image" />
+                    <img [src]="'assets/images/' + ourPlayer.attributes.attack.dice + '.png'" alt="Dice" class="dice-image" />
+                    <span class="dice-result">{{ ourPlayer.data.includes(playerData.ActiveInCombat) ? '-' : ourPlayer.diceResult }}</span>
+                </div>
+                <div class="dice-container">
+                    <img src="assets/images/defense.png" alt="Defense" class="dice-image" />
+                    <img [src]="'assets/images/' + ourPlayer.attributes.defense.dice + '.png'" alt="Dice" class="dice-image" />
+                    <span class="dice-result">{{ ourPlayer.data.includes(playerData.ActiveInCombat) ? ourPlayer.diceResult : '-' }}</span>
+                </div>
+            </div>
+
+            <div class="players-container">
+                <div class="combatant attacker">
+                    <div class="evasion-attempts">Évasion restante : {{ ourPlayer.evasionAttempts }}</div>
+                    <div class="avatar-container">
+                        <img
+                            [src]="ourPlayer.avatar"
+                            alt="Avatar de l'attaquant"
+                            class="avatar"
+                            [class.dead-avatar]="ourPlayer.data.includes(playerData.DeadInCombat)"
+                            [class.evaded-avatar]="ourPlayer.data.includes(playerData.EvadeSuccessful)"
+                        />
+                        <div class="health-bar-container">
+                            <div class="health-bar">
+                                <div class="current-health" [style.width.%]="attackerHealthPercent"></div>
+                            </div>
+                            <span class="health-fraction">{{ ourPlayer.attributes.currentHealth }}/{{ ourPlayer.attributes.health }}</span>
+                        </div>
+                        <span class="name">{{ ourPlayer.name }}</span>
+                    </div>
+                </div>
+
+                <div class="combatant defender">
+                    <div class="evasion-attempts">Évasion restante : {{ otherPlayer.evasionAttempts }}</div>
+                    <div class="avatar-container">
+                        <img
+                            [src]="otherPlayer.avatar"
+                            alt="Avatar du défenseur"
+                            class="avatar"
+                            [class.dead-avatar]="otherPlayer.data.includes(playerData.DeadInCombat)"
+                            [class.evaded-avatar]="otherPlayer.data.includes(playerData.EvadeSuccessful)"
+                        />
+                        <div class="health-bar-container">
+                            <div class="health-bar">
+                                <div class="current-health" [style.width.%]="defenderHealthPercent"></div>
+                            </div>
+                            <span class="health-fraction">{{ otherPlayer.attributes.currentHealth }}/{{ otherPlayer.attributes.health }}</span>
+                        </div>
+                        <span class="name">{{ otherPlayer.name }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dice-box">
+                <div class="dice-container">
+                    <img src="assets/images/attack.png" alt="Attack" class="dice-image" />
+                    <img [src]="'assets/images/' + otherPlayer.attributes.attack.dice + '.png'" alt="Dice" class="dice-image" />
+                    <span class="dice-result">{{ otherPlayer.data.includes(playerData.ActiveInCombat) ? '-' : otherPlayer.diceResult }}</span>
+                </div>
+                <div class="dice-container">
+                    <img src="assets/images/defense.png" alt="Defense" class="dice-image" />
+                    <img [src]="'assets/images/' + otherPlayer.attributes.defense.dice + '.png'" alt="Dice" class="dice-image" />
+                    <span class="dice-result">{{ otherPlayer.data.includes(playerData.ActiveInCombat) ? otherPlayer.diceResult : '-' }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="action-btn roll" (click)="onRollDice()" [disabled]="!isActiveInCombat">Attaquer</button>
+            <button class="action-btn flee" (click)="onEvade()" [disabled]="!isActiveInCombat || !ourPlayer.evasionAttempts">Fuir</button>
+        </div>
+    </div>
+</div>

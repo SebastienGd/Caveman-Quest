@@ -1,0 +1,456 @@
+{
+    "_id": "67a8b767fe97107206763771",
+    "createdAt": "2025-02-09T14:01:22.718Z",
+    "description": "ctf",
+    "mode": "Capture the Flag",
+    "name": "TEST",
+    "size": 10,
+    "data": { "debugging": false },
+    "tiles": [
+        [
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            }
+        ],
+        [
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            }
+        ],
+        [
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            }
+        ],
+        [
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            }
+        ],
+        [
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "wall",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            }
+        ],
+        [
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            }
+        ],
+        [
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            }
+        ],
+        [
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            }
+        ],
+        [
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "base",
+                "object": null
+            },
+            {
+                "type": "opened_door",
+                "object": null
+            },
+            {
+                "type": "base"
+            },
+            {
+                "type": "base",
+                "object": {
+                    "name": "spawnpoint"
+                }
+            },
+            {
+                "type": "base",
+                "object": {
+                    "name": "flag"
+                }
+            }
+        ],
+        [
+            {
+                "type": "base",
+                "object": {
+                    "name": "spawnpoint"
+                }
+            },
+            {
+                "type": "base",
+                "object": {
+                    "name": "steak"
+                }
+            },
+            {
+                "type": "base",
+                "object": {
+                    "name": "massue"
+                }
+            },
+            {
+                "type": "base",
+                "object": {
+                    "name": "torch"
+                }
+            },
+            {
+                "type": "base",
+                "object": {
+                    "name": "os"
+                }
+            },
+            {
+                "type": "base",
+                "object": {
+                    "name": "t-rex"
+                }
+            },
+            {
+                "type": "base",
+                "object": {
+                    "name": "bird"
+                }
+            },
+            {
+                "type": "base",
+                "object": {
+                    "name": "random"
+                }
+            },
+            {
+                "type": "base",
+                "object": {
+                    "name": "random"
+                }
+            },
+            {
+                "type": "base",
+                "object": {
+                    "name": "flag"
+                }
+            }
+        ]
+    ],
+    "updatedAt": "2025-02-09T14:01:30.194Z",
+    "visibility": true
+}

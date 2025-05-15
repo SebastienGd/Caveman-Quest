@@ -1,0 +1,19 @@
+@if (errors.length > 0) {
+<div class="popup-overlay">
+    <div class="popup">
+        @if(errorType === "selectionError"){
+        <h3>Erreur lors de la sélection</h3>
+        } @else if(errorType === "deleteError"){
+        <h3>Erreur lors de la suppression</h3>
+        } @else {
+        <h3>Erreur lors de l'enregistrement</h3>
+        }
+        <ul>
+            @for (error of errors; track $index) {
+            <li>{{ error }}</li>
+            }
+        </ul>
+        <app-button (click)="closePopup()" color="#e3342f" [disableElevation]="true" [hoverEffect]="'changeColor'" size="medium">Fermer</app-button>
+    </div>
+</div>
+}

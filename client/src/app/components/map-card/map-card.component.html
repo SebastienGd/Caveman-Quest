@@ -1,0 +1,41 @@
+<div class="map-card" [class.modal-open]="showDeleteConfirmation">
+    <div class="map-card">
+        <div class="map-box">
+            <app-map [map]="map" [hidden]="isHovered" [shownDetailType]="'description'"></app-map>
+        </div>
+        <div class="info">
+            <p class="map-name">{{ map.name }}</p>
+            <p class="map-mode">Mode : {{ map.mode }}</p>
+            <p class="map-size">Taille : {{ map.size }}</p>
+            <p class="map-last-modified">Dernière modification : {{ formatDate(map.updatedAt) }}</p>
+        </div>
+        <div class="actions">
+            <button class="action edit" (click)="editMap()">✎</button>
+            <button class="action view" (click)="toggleVisibility()">
+                @if(map.visibility) {
+                <img class="visible-image" src="assets/images/mapVisible.png" />
+                } @else {
+                <img class="unvisible-image" src="assets/images/mapUnvisible.png" />
+                }
+            </button>
+            <button class="action delete" (click)="toggleDeletePopup()">
+                <img class="bin-image" src="assets/images/trash-can.png" />
+            </button>
+            @if (showDeleteConfirmation) {
+            <div class="overlay"></div>
+            <div class="delete-popup">
+                <p>Êtes-vous sûr de vouloir supprimer cette carte ?</p>
+                <button (click)="cancelDelete()">Non</button>
+                <button (click)="confirmDelete()">Oui</button>
+            </div>
+            }
+        </div>
+        @if (errorDeletedPopup) {
+        <app-error-popup
+            [errorType]="'deleteError'"
+            [errors]="['La carte a déjà été supprimé!']"
+            (popupClose)="errorDeletedPopup = false; this.mapDeleted.emit()"
+        ></app-error-popup>
+        }
+    </div>
+</div>

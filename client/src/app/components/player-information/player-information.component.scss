@@ -1,0 +1,133 @@
+.player-info-card {
+    background-color: #e5d5b2;
+    border: 2px solid #4c3229;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #4c3229;
+    flex-shrink: 0;
+}
+
+.player-name {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-left: 4px;
+    flex-grow: 1;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.surrender-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+}
+
+.surrender-button img {
+    width: 55px;
+    height: 55px;
+    transition:
+        transform 0.2s ease-in-out,
+        filter 0.2s ease-in-out;
+}
+
+.surrender-button img:hover {
+    filter: brightness(0.7);
+    transform: scale(1.1);
+}
+
+.attributes-and-inventory {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.attributes {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: -20px;
+}
+
+.attribute {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.attribute img:first-child {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.attribute span {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.attribute .dice {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+}
+
+.inventory {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.slots {
+    display: flex;
+    gap: 8px;
+}
+
+.slot {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #8b8b8b;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 3px;
+    border-radius: 2px;
+
+    &:hover {
+        border-color: #fff;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.slot:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+}
+
+.slot img {
+    width: 85%;
+    height: 85%;
+}

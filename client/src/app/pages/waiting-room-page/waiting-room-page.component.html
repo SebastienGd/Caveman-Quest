@@ -1,0 +1,82 @@
+<main class="waiting-room-container">
+    @if(waitingRoomService.waitingRoom){ @if (isQuitPopupVisible) {
+    <app-choice-modal
+        [message]="'Êtes-vous certain de vouloir quitter?'"
+        [firstOption]="'Annuler'"
+        [secondOption]="'Confirmer'"
+        (firstAction)="quitCancel()"
+        (secondAction)="quitConfirm()"
+    />
+    }
+
+    <div class="top-bar">
+        <button class="quit-btn" (click)="isQuitPopupVisible = true">Quitter</button>
+
+        <div class="room-code-block">
+                <p class="room-code">Code: </p>
+                @for (digit of waitingRoomService.waitingRoom.code; track $index) {
+                <span class="digit">{{ digit }}</span>
+                }
+        </div>
+    </div>
+
+    <h1 class="page-title">Salle d'attente</h1>
+
+    @if (isAdmin) {
+    <section class="admin-controls">
+        <button class="admin-btn" [disabled]="waitingRoomService.waitingRoom.fullRoomAutoLocked || !hasAvatarsLeft" (click)="addAgressiveVP()">
+            + Joueur virtuel aggressif
+        </button>
+        <button class="admin-btn" [disabled]="waitingRoomService.waitingRoom.fullRoomAutoLocked || !hasAvatarsLeft" (click)="addDefensiveVP()">
+            + Joueur virtuel défensif
+        </button>
+        <button
+            class="admin-btn lock-btn"
+            [ngClass]="{ locked: waitingRoomService.isGameLocked(), 'auto-locked': waitingRoomService.waitingRoom.fullRoomAutoLocked }"
+            [disabled]="waitingRoomService.waitingRoom.fullRoomAutoLocked"
+            (click)="toggleLock()"
+        >
+            🔒 @if (waitingRoomService.waitingRoom.fullRoomAutoLocked) {
+            <span class="tooltip"> La salle est automatiquement verrouillée car elle est pleine </span>
+            }
+        </button>
+
+        <button
+            class="admin-btn start-btn"
+            [ngClass]="{ ready: waitingRoomService.isGameLocked() }"
+            [disabled]="!waitingRoomService.isGameLocked()"
+            (click)="startGame()"
+        >
+            Commencer
+        </button>
+    </section>
+    }
+
+    <section class="main-content">
+        <div class="players-section">
+            <div class="title-players">
+                <h2>Joueurs dans la salle</h2>
+            </div>
+
+            <div class="list-wrapper">
+                <app-waiting-room-list
+                    [players]="waitingRoomService.waitingRoom.players"
+                    [playerID]="waitingRoomService.playerId"
+                    (remove)="handleClickOnExclude($event)"
+                >
+                </app-waiting-room-list>
+            </div>
+        </div>
+
+        <div class="chat-section">
+            <app-chat-box
+            [currentPlayer]="getCurrentPlayer()"
+            [messages]="chatMessages()"
+            [logs]="journalMessages()"
+            (sendChatMessage)="chatService.sendMessage($event)">
+          </app-chat-box>
+        </div>
+    </section>
+
+    }
+</main>

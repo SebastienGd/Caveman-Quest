@@ -1,0 +1,286 @@
+.battle-container {
+    position: relative;
+    width: 950px;
+    height: 610px;
+    border: 2px solid #2c1c09;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: 5px;
+    transform: translateY(-2%);
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    background-color: rgba(34, 50, 22, 0.2);
+    padding-top: 80px;
+}
+
+.dice-box {
+    position: relative;
+    height: 180px;
+    width: 160px;
+    display: flex;
+    background-color: #9d7b4b;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-20%);
+    gap: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 0 35px;
+    border: 5px solid #33261d;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 6;
+    margin-top: 20px;
+}
+
+.combatant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 5px solid #33261d;
+    border-radius: 15px;
+    padding: 15px;
+    transform: translateY(-5%);
+    background-color: rgb(190, 174, 145);
+    z-index: 5;
+
+    &.attacker {
+        border-color: #b88f51;
+        background-color: rgb(202, 185, 153);
+        .name {
+            font-weight: bold;
+            font-size: 2.9rem;
+        }
+    }
+
+    &.defender {
+        .name {
+            font-size: 1rem;
+        }
+    }
+
+    .evasion-attempts {
+        position: absolute;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #4c3229;
+        background: rgba(255, 255, 255, 0.295);
+        padding: 5px 15px;
+        width: 200px;
+        text-align: center;
+        border-radius: 5px;
+        border: 2px solid #4c3229;
+        box-shadow: 0 2px 6px rgba(0, 0, 0);
+        top: 45px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 4;
+    }
+
+    .avatar-container {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: url('/assets/images/stone-combat.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 80px;
+        margin-top: -20px;
+        filter: brightness(1.15);
+
+        .avatar {
+            width: auto;
+            height: 240px;
+            border-radius: 10px;
+            filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.5));
+            transition: all 1s ease;
+            position: relative;
+            margin-bottom: 20px;
+            margin-top: 30px;
+
+            &.dead-avatar {
+                animation: redden 2s ease-in-out forwards;
+            }
+
+            &.evaded-avatar {
+                animation: fadeOut 1.5s ease-in-out forwards;
+            }
+        }
+
+        .health-bar-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            gap: 12px;
+        }
+
+        .health-bar {
+            width: 180px;
+            height: 18px;
+            background: #d64242;
+            border: 2px solid #4c3229;
+            border-radius: 8px;
+            overflow: hidden;
+
+            .current-health {
+                height: 100%;
+                background: #5bb76c;
+                transition: width 0.3s ease;
+                border-right: 1px solid #4c3229;
+                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .health-fraction {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #4c3229;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .name {
+            font-size: 2.3rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.battle-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 550px;
+    flex-shrink: 0;
+}
+
+.battle-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.players-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    margin-top: -30px;
+    z-index: 4;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 160px;
+        height: 180px;
+        top: 130px;
+        left: 50%;
+        transform: translateY(-10%);
+        transform: translateX(-50%);
+
+        background-image: url('/assets/images/VS-combat.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 7;
+    }
+}
+
+.dice-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.dice-result {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4c3229;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.dice-image {
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.actions {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    .action-btn {
+        width: 180px;
+        height: 50px;
+        border: 3px solid #33261d;
+        border-radius: 10px;
+        background-color: #846335;
+        color: white;
+        font-size: 1.4rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        position: relative;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+        &:hover:not(:disabled) {
+            transform: scale(1.05);
+            background-color: #c4a87f;
+        }
+
+        &:disabled {
+            cursor: not-allowed !important;
+            opacity: 0.5;
+            filter: grayscale(80%);
+            background-color: #6e574a;
+        }
+    }
+}
+
+@keyframes redden {
+    0% {
+        filter: none;
+    }
+    100% {
+        filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

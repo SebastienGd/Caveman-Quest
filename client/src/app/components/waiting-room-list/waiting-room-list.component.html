@@ -1,0 +1,33 @@
+<div class="player-list">
+    @for (player of players; track player.name) {
+      <div class="player-item" 
+          [class.organizer]="isAdmin(player.id)"
+           [ngClass]="{
+             'active': player.id === playerID
+           }">
+        
+        <img [src]="player.avatar" [alt]="player.name" class="avatar">
+        
+        <div class="player-info">
+          <div class="name-row">
+            <span class="name"> {{ player.name }}</span>
+            @if (isAdmin(player.id)) {
+              <span class="admin-star">⭐</span>
+            }
+            @if (player.id.includes('virtual')) {
+              <span class="virtual-icon">
+                <img src="assets/images/virtual-player.png" alt="Virtual" />
+              </span>
+            }
+            
+          </div>
+        </div>
+
+        @if(isAdmin(playerID) && player.id !== admin.id) {
+            <button class="remove-button" (click)="remove.emit(player.id)">❌</button>
+        }
+ 
+      </div>
+    }
+  </div>
+  

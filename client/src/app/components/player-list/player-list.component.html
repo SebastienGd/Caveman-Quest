@@ -1,0 +1,30 @@
+<div class="player-list">
+    @for (player of players; track player.name) {
+    <div
+        class="player-item"
+        [class.organizer]="player.name === organizerName"
+        [ngClass]="{
+            'left-player': player.data.includes(playerData.Disconnected),
+            active: player.name === activePlayerName,
+            blueTeam: player.data.includes(playerData.BlueTeam),
+            redTeam: player.data.includes(playerData.RedTeam)
+        }"
+    >
+        <img [src]="player.avatar" [alt]="player.name" class="avatar" />
+
+        <div class="player-info">
+            <div class="name-row">
+                <span class="name">{{ player.name }}</span>
+                @if (player.name === organizerName) {
+                <span class="admin-star">⭐</span>
+                } @if (player.id.includes('virtual')) {
+                <span class="flag"><img src="assets/images/virtual-player.png" /></span>
+                } @if (playerHasFlag(player)) {
+                <span class="flag"><img src="assets/images/flag.png" /></span>
+                }
+                <span class="victories">victoire: {{ player.stats.victories || 0 }}</span>
+            </div>
+        </div>
+    </div>
+    }
+</div>

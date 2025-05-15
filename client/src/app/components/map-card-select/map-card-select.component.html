@@ -1,0 +1,27 @@
+<div class="map-card-select">
+    <div class="map-box">
+        <div class="map-grid">
+            <app-map [map]="map" [shownDetailType]="'description'"></app-map>
+        </div>
+    </div>
+
+    <div class="info">
+        <p class="map-name">{{ map.name }}</p>
+        @if (map.mode === gameMode.Ctf){
+        <p class="map-mode">Mode: Capturer le Drapeau</p>
+        } @else {
+        <p class="map-mode">Mode: Classique</p>
+        }
+        <p class="map-size">
+            @if(sizeToPlayerCount[map.size]){
+            {{ sizeToPlayerCount[map.size].min }}
+            @if(sizeToPlayerCount[map.size].min !== sizeToPlayerCount[map.size].max){
+            {{ ' à ' + sizeToPlayerCount[map.size].max }}
+            } joueurs }
+        </p>
+    </div>
+    <app-button id="select-button" (click)="isMapAvailable(map._id)">Sélectionner</app-button>
+    @if(showErrorPopup){
+    <app-error-popup errorType="selectionError" [errors]="[errorMessage]" (popupClose)="showErrorPopup = false"></app-error-popup>
+    }
+</div>

@@ -1,0 +1,19 @@
+<button
+    class="btn-action"
+    [ngStyle]="{
+        'background-color': hoverEffect === 'changeColor' && isHovering ? colorService.darkenColor(color, 20) : color
+    }"
+    [ngClass]="{
+        'btn-small': size === 'small',
+        'btn-medium': size === 'medium',
+        'btn-large': size === 'large',
+        'translate-hover-effect': hoverEffect === 'translate',
+        'disable-elevation': disableElevation,
+        'full-width': fullWidth,
+    }"
+    (mouseenter)="onHover(true)"
+    (mouseleave)="onHover(false)"
+    [disabled]="isDisabled"
+>
+    <ng-content></ng-content>
+</button>

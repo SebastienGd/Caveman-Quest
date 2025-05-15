@@ -1,0 +1,14 @@
+<div class="popup-overlay">
+    <div class="choicePopup">
+        <p>Veuillez choisir un objet à relâcher:</p>
+        <div class="button-container">
+            @for(object of tile.player?.inventory; track object){
+            <app-button (click)="manageInventory(object)" > 
+                <img [src]="'assets/images/' + object.name + '.png'">
+            </app-button>}
+            <app-button (click)="manageInventory(tile.object!)">
+                <img [src]="'assets/images/' + tile.object?.name + '.png'">
+            </app-button>
+        </div>
+    </div>
+</div>

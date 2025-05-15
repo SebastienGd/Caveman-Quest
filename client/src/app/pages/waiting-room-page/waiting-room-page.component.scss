@@ -1,0 +1,298 @@
+@font-face {
+    font-family: 'Rocher';
+    src: url('https://assets.codepen.io/9632/RocherColorGX.woff2');
+}
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%btn-shared {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+%beige-btn {
+    @extend %btn-shared;
+    background-color: #dccebb;
+    color: #3b2a1e;
+    border-color: #333;
+
+    &:hover {
+        background-color: #c2b094;
+    }
+}
+
+.waiting-room-container {
+    @extend %flex-center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    background-image: url('../../../assets/images/rocks.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 0;
+
+}
+
+@font-palette-values --Grays {
+    font-family: 'Rocher';
+    base-palette: 9;
+}
+
+.page-title {
+    font-family: 'Rocher';
+    text-align: center;
+    font-size: 3rem;
+    margin: 10px auto 5px;
+    color: #562b0c;
+    font-palette: --Grays;
+    filter: brightness(0.68) contrast(1.7);
+    transform: translateY(-30px);
+}
+
+.top-bar {
+    @extend %flex-center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 18 auto 0px;
+    padding: 0 20px;
+
+    h2 {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+}
+
+.room-code-block {
+    @extend %flex-center;
+    @extend %beige-btn;
+    padding: 10px 20px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #3b2a1e;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    cursor: default;
+
+    &:hover {
+        background-color: #dccebb;
+    }
+
+    h2 {
+        margin: 0;
+        font-family: inherit;
+    }
+
+    .room-code {
+        font-family: inherit;
+        margin-left: 5px;
+    }
+}
+
+.room-code {
+    font-family: monospace;
+}
+
+.room-code-btn {
+    @extend %flex-center;
+    @extend %beige-btn;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 1rem;
+    margin-left: 10px;
+
+    .digit {
+        font-family: monospace;
+        font-weight: bold;
+        min-width: 20px;
+    }
+
+    .copy-icon {
+        font-size: 1rem;
+    }
+}
+
+.quit-btn {
+    @extend %btn-shared;
+    font-family: monospace;
+    background-color: #df4f4f;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.main-content {
+    @extend %flex-center;
+    align-items: stretch;
+    backdrop-filter: blur(1.5px);
+    transform: translateY(-40px);
+    height: calc(100vh - 240px);
+    gap: 35px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 0;
+    height: 200;
+
+    .players-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1;
+        padding: 10px 20px;
+        border: 3px solid hsl(15, 30%, 23%);
+        border-radius: 12px;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 400px;
+        height: 500px;
+        overflow-y: auto;
+
+        .title-players {
+            width: 100%;
+            padding: 10px 0 5px;
+            transform: translateY(5px);
+            border-bottom: 2px solid hsl(15, 30%, 23%);
+            margin-bottom: 40px;
+            h2 {
+                margin: 0;
+                font-size: 2rem;
+                font-weight: 700;
+                color: #614535;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        .list-wrapper {
+            width: 100%;
+            padding: 0;
+            margin-top: 10px;
+            justify-content: center;
+            overflow: visible;
+            max-height: unset;
+        }
+    }
+
+    .chat-section {
+        display: flex;
+        padding: 0;
+
+        ::ng-deep app-chat-box {
+            flex: 1;
+            display: flex;
+
+            .chat-box {
+                width: 450px;
+                height: 99% !important;
+                max-height: 500px;
+                margin: 0;
+                background-color: rgba(245, 233, 210, 0.45) !important;
+            }
+        }
+    }
+}
+
+.admin-controls {
+    @extend %flex-center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    transform: translateY(-33px);
+
+    .admin-btn {
+        @extend %btn-shared;
+        @extend %beige-btn;
+        font-family: monospace;
+        padding: 10px 20px;
+        font-size: 0.65rem;
+        border: 2px solid #333;
+        font-weight: bold;
+        color: #3b2a1e;
+        border-radius: 8px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        &:disabled {
+            background: #cccccc;
+            color: #666666;
+        }
+    }
+
+    .lock-btn {
+        padding: 10px 15px;
+        font-size: 1.2rem;
+        background: none;
+        border: 2px solid #333;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+
+        .tooltip {
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #df4f4f;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.6rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease-in-out;
+            z-index: 10;
+        }
+
+        &:hover .tooltip {
+            opacity: 1;
+        }
+
+        &.locked {
+            background-color: #df4f4f;
+            color: white;
+            border-color: #af3939;
+            box-shadow: 0 0 6px rgba(251, 112, 112, 0.5);
+        }
+    }
+
+    .start-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+        background-color: #ccc;
+        border: 2px solid #888;
+        color: #333;
+        margin-left: 10px;
+        font-weight: bold;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        &.ready {
+            background-color: #3ca240;
+            color: white;
+            border-color: #388e3c;
+        }
+    }
+}

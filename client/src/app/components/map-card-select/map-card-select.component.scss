@@ -1,0 +1,50 @@
+.map-card-select {
+    border-radius: 10px;
+    width: 350px;
+    height: 590px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+}
+
+.map-box {
+    background-color: var(--font-color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-grid {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.info {
+    padding: 10px;
+    height: 130px;
+    background-color: antiquewhite;
+    box-shadow: 10px 8px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 10px 10px;
+}
+
+.info p {
+    margin: 8px 0;
+    font-size: 1.3rem;
+}
+
+.map-name {
+    font-size: 1.8rem !important;
+    font-weight: bold;
+}
+
+app-button {
+    margin-top: auto;
+}
+
+#select-button {
+    margin-bottom: 20px;
+}
