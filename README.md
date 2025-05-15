@@ -1,6 +1,6 @@
 # Caveman Quest RPG
 
-Caveman Quest is a digital adaptation (full-stack web application) of the RPG board game developed as part of the LOG2990 course. Collaborators: Simon Asmar, Sarah Ait-Ali-Yahia, Jordan Filion, Cerine Ouchene, Rami Medjdoubi.
+Caveman Quest is a digital adaptation (full-stack web application) of the RPG board game developed as part of the LOG2990 course. Collaborators: Simon Asmar, Sarah Ait-Ali-Yahia, Jordan Filion, Cerine Ouchene, Rami Medjdoubi. Backend development was mainly handled by Simon, Sarah, and myself, while Jordan, Cerine, and Rami focused on frontend development.
 
 ## Prerequisites
 
